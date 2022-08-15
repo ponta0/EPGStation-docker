@@ -15,4 +15,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build ./build --tag epgstation-docker:$(date +%s)
+      run: |
+        docker build ./build --tag epgstation-docker:$(date +%s)
