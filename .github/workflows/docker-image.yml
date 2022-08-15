@@ -18,8 +18,3 @@ jobs:
       - run: |
           docker build ./build --tag epgstation-docker:$(date +%s)
           docker save epgstation-docker> epgstation-docker.tar
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v3
-      - with:
-         name: epgstation-docker
-         path: epgstation-docker.tar
