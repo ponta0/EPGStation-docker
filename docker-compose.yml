@@ -2,7 +2,5 @@ version: '3'
 services:
   epgstation:
     build: build
-    volumes:
-      - ./config:/opt/EPGStation
     ports:
       - 8888:8888
