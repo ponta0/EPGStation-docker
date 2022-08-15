@@ -17,3 +17,4 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build ./build --tag epgstation-docker:$(date +%s)
+        docker save epgstation-docker > epgstation-docker.tar
