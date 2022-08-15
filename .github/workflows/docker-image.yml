@@ -13,13 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
     - name: Build the Docker image
-    - run: docker build ./build --tag epgstation-docker:$(date +%s)
-    - run: docker save epgstation-docker> epgstation-docker.tar
+    - uses: actions/checkout@v3
+    - run: |
+        docker build ./build --tag epgstation-docker:$(date +%s)
+        docker save epgstation-docker> epgstation-docker.tar
 
-    - uses: actions/upload-artifact@v3
+
     - name: 'Upload Artifact'
+      uses: actions/upload-artifact@v3
     - with:
         name: epgstation-docker
         path: epgstation-docker.tar
