@@ -2,6 +2,9 @@ version: '3'
 services:
   epgstation:
     build: build
-    restart: always
+    volumes:
+      - /opt/EPGStation/config
+      - ./recorded:/opt/EPGStation/recorded
     ports:
       - 8888:8888
+    restart: always
