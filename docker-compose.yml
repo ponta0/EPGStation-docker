@@ -3,7 +3,7 @@ services:
   epgstation:
     build: build
     volumes:
-      - /opt/EPGStation/config
+      - ./config/:/opt/EPGStation/config
       - ./recorded:/opt/EPGStation/recorded
     ports:
       - 8888:8888
