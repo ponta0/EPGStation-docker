@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ENV MIRAKURUN_ENDPOINT="10.24.0.102:40772"
+ENV MIRAKURUN_ENDPOINT="mirakurun.localdomain:40772"
 
 WORKDIR /opt
 
@@ -15,6 +15,9 @@ RUN git clone https://github.com/l3tnun/EPGStation.git && \
     cd EPGStation && \
     npm run all-install && \
     npm run build
+
+RUN cd EPGStation && \ 
+    mv config config_template
 
 RUN echo "endpoint is ${MIRAKURUN_ENDPOINT}"
 
