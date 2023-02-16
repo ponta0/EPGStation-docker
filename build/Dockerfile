@@ -1,7 +1,5 @@
 FROM ubuntu:latest
 
-ENV MIRAKURUN_ENDPOINT="mirakurun.localdomain:40772"
-
 WORKDIR /opt
 
 RUN apt update && \
@@ -18,6 +16,8 @@ RUN git clone https://github.com/l3tnun/EPGStation.git && \
 
 RUN cd EPGStation && \ 
     mv config config_template
+
+ENV MIRAKURUN_ENDPOINT="mirakc.pve.localdomain:40772"
 
 RUN echo "endpoint is ${MIRAKURUN_ENDPOINT}"
 

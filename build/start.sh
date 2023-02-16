@@ -10,6 +10,7 @@ then
     cp config_template/serviceLogConfig.sample.yml config/serviceLogConfig.yml
     cp config_template/enc.js.template config/enc.js
     sed -i -e "s/mirakurunPath: http+unix:\/\/%2Fvar%2Frun%2Fmirakurun\.sock\//mirakurunPath: http:\/\/${MIRAKURUN_ENDPOINT}/" config/config.yml
+    sed -i -e "s/\/usr\/local\/bin\/ff/\/usr\/bin\/ff/g" config/config.yml
     touch /opt/EPGStation/config/first
 fi
 
